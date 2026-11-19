@@ -2,6 +2,10 @@
 
 **Keep the grill hot. Keep your story straight.**
 
+**Play online:** https://last-order-starline.pages.dev
+
+Source: https://github.com/lucifer-eason/last-order · Production branch: `main`. Cloudflare Pages automatically deploys updates from this branch.
+
 A playable English-language prototype of a first-person restaurant and undercover-spy simulator. Bellport, October 1999. You work at Starline Burger under the name Alex Vale. Your customers want lunch; your handler wants a list of names. The people on that list want to survive the week.
 
 ## Play

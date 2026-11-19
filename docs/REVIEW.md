@@ -41,4 +41,4 @@ Two PixelLab trial generations were used. Existing cover art was reused. The gam
 
 ## Publication status
 
-The private site identity was registered, but source synchronization could not reach its upload host because DNS resolution failed in the execution environment. No successful web deployment is claimed. The delivered standalone HTML and source ZIP run independently of that service. The original project ID is retained for a later publishing retry.
+The dedicated private GitHub repository is `lucifer-eason/last-order`, with `main` as its production branch. Cloudflare Pages is linked to that repository with automatic production deployments enabled. The first production deployment succeeded at https://last-order-starline.pages.dev. All nine deployed files returned HTTP 200 and matched the local source by SHA-256. These checks verify delivery and file integrity; full interactive browser and visual playtesting remain unverified.

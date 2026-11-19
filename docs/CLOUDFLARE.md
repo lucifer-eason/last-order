@@ -1,5 +1,9 @@
 # Deploy LAST ORDER to Cloudflare Pages
 
+Current production site: https://last-order-starline.pages.dev
+
+The project is already linked to the dedicated GitHub repository. Pushing to `main` triggers deployment. The steps below document how to reproduce the setup.
+
 The game is a static site. No paid plan, server, database, build dependency, or custom domain purchase is required for this deployment.
 
 ## GitHub integration
