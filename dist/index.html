@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#251e22"><meta name="description" content="Run a burger shop. Keep your cover. Decide who gets the truth. An English-language restaurant and spy simulator set in 1999.">
+  <title>LAST ORDER — A Starline Burger Story</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game">
+  <section id="title-screen" aria-label="Main menu">
+    <div class="title-art"></div><div class="title-shade"></div>
+    <div class="brand-corner"><span class="star">✦</span> STARLINE BURGER <span class="since">OPEN LATE SINCE 1978</span></div>
+    <div class="title-copy"><p class="eyebrow">BELLPORT, 1999 / AN UNDERCOVER SIMULATOR</p><h1>LAST<br><em>ORDER.</em></h1><p class="tagline">Keep the grill hot.<br>Keep your story straight.</p><div class="title-actions"><button class="primary" id="start">Clock in <span></span></button><button id="continue" hidden>Continue shift</button><button id="title-help">How to play</button></div><p class="title-foot">Five shifts. One small diner. A city’s worth of secrets.</p></div>
+    <div class="title-stamp"><span>LISTEN.</span><span>READ.</span><span>LEAVE A TRACE.</span><small>A playable story about the people behind the orders.</small></div>
+    <div class="title-bottom"><span>FIRST PERSON • STORY + RESTAURANT SIMULATION</span><span>HEADPHONES RECOMMENDED / CAPTIONS AVAILABLE</span></div>
+  </section>
+  <section id="play-screen" hidden>
+    <header class="topbar"><button class="wordmark" data-action="pause" title="Pause and menu">LAST <em>ORDER.</em></button><div class="shift-mark"><span id="day-tag">SHIFT 01</span><strong id="clock">08:00</strong><span id="open-tag" class="live">OPEN</span></div><div class="metrics"><div><small>TILL</small><b id="cash">$140</b></div><div><small>REPUTATION</small><b id="rep">72</b></div><div><small>SUSPICION</small><b id="heat">8</b></div><button class="icon-button" data-action="settings" aria-label="Settings">⚙</button><button class="icon-button" data-action="help" aria-label="Help">?</button></div></header>
+    <div class="game-layout"><section class="diner-view" aria-label="First-person diner">
+      <canvas id="world" width="640" height="360" tabindex="0" aria-label="First-person view. Use W A S D to move, arrow keys to look, E to interact. Station buttons provide an alternative."></canvas>
+      <div class="scene-top"><span class="location-pill" id="location">BEHIND THE COUNTER</span><span class="weather-pill" id="weather">BELLPORT / 1999</span></div>
+      <div class="crosshair" aria-hidden="true"></div><button id="interact" class="interact-prompt"><kbd>E</kbd> Open counter</button>
+      <div id="captions" class="captions" role="status" hidden></div>
+      <div class="world-bottom"><span><kbd>W A S D</kbd> MOVE <kbd>← →</kbd> LOOK <kbd>E</kbd> INTERACT</span><button data-action="fullscreen" class="tiny">⛶ Fullscreen</button></div>
+      <div class="mobile-look"><button data-look="-1" aria-label="Look left">↶</button><button data-look="1" aria-label="Look right">↷</button></div>
+      <div class="mobile-move"><button data-move="w" aria-label="Move forward">↑</button><button data-move="a" aria-label="Move left">←</button><button data-move="s" aria-label="Move backward">↓</button><button data-move="d" aria-label="Move right">→</button></div>
+    </section><aside class="sidebar"><div class="sidebar-heading"><span class="eyebrow">ON YOUR SHIFT</span><button data-action="close-shift" class="tiny">Close shift</button></div><div class="objective"><span class="status-dot"></span><div><small>THE OTHER JOB</small><p id="mission-text"></p><button data-action="notebook" class="text-button">Open case notebook</button></div></div><div class="queue-heading"><h2>At the counter</h2><span id="queue-count">0 WAITING</span></div><div id="queue"></div><div id="events"></div><div class="shift-health"><div><span>KITCHEN HYGIENE</span><b id="hygiene">88%</b></div><div class="meter"><i id="hygiene-bar"></i></div><button data-action="clean" class="text-button">Wipe surfaces & take out waste</button></div><p id="message" class="message" role="status"></p></aside></div>
+    <footer class="workbench"><div class="tray-section"><span class="eyebrow">YOUR TRAY</span><div id="tray"></div><button data-action="clear-tray" class="tiny">Clear · $1 waste</button></div><nav class="station-nav" aria-label="Stations"><button data-station="counter"><span>01</span>Counter</button><button data-station="kitchen"><span>02</span>Kitchen</button><button data-station="drinks"><span>03</span>Drinks</button><button data-station="office"><span>04</span>Office</button><button data-station="storeroom"><span>05</span>Stockroom</button></nav><button data-action="notebook" class="notebook-shortcut"><span>▤</span> Case notebook <kbd>N</kbd></button></footer>
+  </section>
+</main>
+<div id="modal-backdrop" class="modal-backdrop" hidden><section id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><header class="modal-head"><div><p id="modal-kicker" class="eyebrow"></p><h2 id="modal-title"></h2></div><button id="modal-close" class="icon-button" aria-label="Close panel">×</button></header><div id="modal-content"></div></section></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<input id="import-file" type="file" accept="application/json,.json" hidden>
+<script src="art.js"></script><script src="food-art.js"></script><script src="story.js"></script><script src="core.js"></script><script src="world.js"></script><script src="app.js"></script>
+<noscript>This game needs JavaScript enabled. No installation, account, or paid API is required.</noscript>
+</body></html>
