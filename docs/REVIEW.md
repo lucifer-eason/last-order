@@ -20,7 +20,7 @@ A browser-control connection was not available for this build. Full interactive 
 
 - **Writing feedback:** authored patterns recognize expected facts and some negations. They can miss valid paraphrases or accept a contradictory statement. The interface labels the feedback as essential-fact checking rather than grammar or general language grading.
 - **Speech:** uses installed English browser voices. Timbre and voice diversity vary by device; some devices may need connectivity for a chosen voice. Captions preserve all dialogue.
-- **Art:** character and food atlases are generated; other regulars and the environment use procedural art. Character animations, directional walking sprites, and bespoke environmental illustrations are not included.
+- **Art:** character, food, and room atlases are generated. Version 0.3 uses illustrated stations by default. Supporting identities share some character sprites. Explore mode retains the procedural environment; character animations and directional walking sheets are not included.
 - **Events:** the twelve events have linked state changes, but several use a single response rather than a separate interactive scene. The notice event requires real writing; source-comparison events present authored evidence.
 - **Balance:** the economic values and patience have not had extended human playtesting. Pausing reading dialogs is intentional accessibility support and reduces time pressure. Station jumps are an accessible alternative to movement.
 - **Scope:** one interior, five shifts, six order patterns, four final choices. No open city, multiplayer, free-form AI dialogue, professional voice acting, or unlimited narrative generation.
@@ -29,7 +29,7 @@ A browser-control connection was not available for this build. Full interactive 
 
 ## Budget and data
 
-Two PixelLab trial generations were used. Existing cover art was reused. The game has no paid runtime AI calls, analytics, cloud save, microphone recording, or account requirement. No API keys are embedded. Source, authored story, asset prompts, and regression tests are included for review and continuation.
+Three PixelLab trial generations were used. Existing cover art was reused. The game has no paid runtime AI calls, analytics, cloud save, microphone recording, or account requirement. No API keys are embedded. Source, authored story, asset prompts, and regression tests are included for review and continuation.
 
 ## Next review priorities
 
@@ -41,8 +41,12 @@ Two PixelLab trial generations were used. Existing cover art was reused. The gam
 
 ## Publication status
 
-The dedicated private GitHub repository is `lucifer-eason/last-order`, with `main` as its production branch. Cloudflare Pages is linked to that repository with automatic production deployments enabled. The first production deployment succeeded at https://last-order-starline.pages.dev. All nine deployed files returned HTTP 200 and matched the local source by SHA-256. These checks verify delivery and file integrity; full interactive browser and visual playtesting remain unverified.
+The dedicated private GitHub repository is `lucifer-eason/last-order`, with `main` as its production branch. Cloudflare Pages is linked to that repository with automatic production deployments enabled. The first production deployment succeeded at https://last-order-starline.pages.dev. At initial publication, all nine then-deployed files returned HTTP 200 and matched the local source by SHA-256. These checks verify delivery and file integrity; full interactive browser and visual playtesting remain unverified.
 
 ## Version 0.2 review
 
 The supplied external audit was reviewed against the current source rather than applied as full-file replacements. `CHANGES-0.2.md` records what was adopted and why the proposed lossless palette conversion, fixed speedup estimate, and blanket negation-window fix were not accepted as stated. The current suite adds shared-negation and correction cases, time/depot vocabulary, actual pager records, debt-safe discard behavior, old-save migration, event-cycle and rollover recovery, audio transitions, input guards, asynchronous voice loading, and floor-buffer/color checks. Browser playtesting remains unverified.
+
+## Version 0.3 review
+
+The visual redesign replaces the default procedural room with illustrated station crops and docks live workstation panels while keeping the restaurant visible. The UI uses paper order tickets, a pager, a service ledge, real sprite portraits, illustrated cooking states, and a locally bundled pixel font. See `CHANGES-0.3.md`. Validation now includes 59 JavaScript checks and 15 DOM workflow checks; canvas and speech are mocked. Both standalone packaging and source packaging succeed. Actual browser screenshots and human visual playtesting remain unverified. No claim of commercial polish is made.

@@ -13,14 +13,18 @@ def build(output_dir=None):
     output = Path(output_dir).resolve() if output_dir else ROOT
     output.mkdir(parents=True, exist_ok=True)
     html = (DIST / 'index.html').read_text(encoding='utf-8')
-    css = (DIST / 'style.css').read_text(encoding='utf-8')
     cover = 'data:image/png;base64,' + base64.b64encode((DIST / 'cover.png').read_bytes()).decode()
-    css = css.replace("url('cover.png')", "url('" + cover + "')")
-    html = html.replace('<link rel="stylesheet" href="style.css">', '<style>\n' + css + '\n</style>')
+    font = 'data:font/ttf;base64,' + base64.b64encode((DIST / 'fonts/Silkscreen-Regular.ttf').read_bytes()).decode()
+    def inline_style(match):
+        css = (DIST / match.group(1)).read_text(encoding='utf-8')
+        css = css.replace("url('cover.png')", "url('" + cover + "')")
+        css = css.replace("url('fonts/Silkscreen-Regular.ttf')", "url('" + font + "')")
+        return '<style>\n' + css + '\n</style>'
+    html = re.sub(r'<link rel="stylesheet" href="([^"]+)">', inline_style, html)
     def inline_script(match):
         code = (DIST / match.group(1)).read_text(encoding='utf-8').replace('</script', '<\\/script')
         return '<script>\n' + code + '\n</script>'
-    html = re.sub(r'<script src="([^"]+)"></script>', inline_script, html)
+    html = re.sub(r'<script src="([^"]+)">\s*</script>', inline_script, html)
     standalone = output / 'LAST-ORDER.html'
     standalone.write_text(html, encoding='utf-8')
     archive = (output if output_dir else ROOT.parent) / 'LAST-ORDER-project.zip'

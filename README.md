@@ -12,7 +12,7 @@ A playable English-language prototype of a first-person restaurant and undercove
 
 Open `dist/index.html` in a current desktop browser, or open the self-contained `LAST-ORDER.html` included with the delivery. No installation, login, API key, subscription, or server is required. If your browser blocks saving from a local file, use **Settings → Export save**.
 
-The hosted edition is private to its owner by default. The downloadable version works independently of hosting.
+The Pages game is publicly accessible. Its source repository is private. The downloadable version works independently of hosting.
 
 1. **Clock in.** Read the morning brief and staff memo. The optional 90-second briefing timer can be switched off.
 2. **Take an order.** Select a customer, listen, and ask for clarification when needed.
@@ -21,15 +21,19 @@ The hosted edition is private to its owner by default. The downloadable version 
 5. **Complete the other job.** Listen to your contact, verify the matching detail, serve the cover order, collect evidence, and secure it in the office.
 6. **Write the report.** Summarize the evidence in your own English, preserving sources, corrections, and uncertainty. After the fifth shift, choose a recipient.
 
-Controls: **W A S D** move, **left/right arrows** look, **E** interact, **N** notebook, **Escape** close/pause. Drag the scene to look around. The station buttons provide immediate navigation; touch movement controls are included.
+Controls: in illustrated view, **A/D or left/right arrows** pan and **W/S** adjust zoom. In Explore mode, **W A S D** move, **left/right arrows** look, **E** interact, **N** notebook, **Escape** close/pause. Drag the scene to look around. The station buttons provide immediate navigation; touch movement controls are included.
 
 The notebook and reading dialogs pause time. Kitchen, counter, office, drinks, and stockroom panels stay live. Default shifts last six minutes; three- and ten-minute options are available each morning. You can close a shift early and accept the consequences.
+
+## Version 0.3 visual redesign
+
+Illustrated station interiors, paper receipt orders, a green-screen pager, a metal tray, pixel typography, and docked live workstations now frame the diner. Use **Explore diner** to switch to the original walkable view. See `docs/CHANGES-0.3.md` for validation and visual-review limits.
 
 ## Version 0.2 improvements
 
 Faster floor drawing, customer status cues, guarded workstation shortcuts, cooking alerts, asynchronously loaded English voices, broader report wording, and complete lost-property handling. Existing version-1 saves remain compatible. See `docs/CHANGES-0.2.md` for the accepted audit suggestions, adjustments, and test limits.
 
-Run `node tools/check.mjs` for all 54 automated checks.
+Run `node tools/check.mjs` for 59 simulation, renderer, and scene checks. The optional `node tools/check-ui.mjs` runs 15 DOM workflow checks with the development-only `linkedom` package installed.
 
 ## Included systems
 
@@ -44,7 +48,7 @@ Run `node tools/check.mjs` for all 54 automated checks.
 
 ## What this version is
 
-Version **0.2.0** is a small complete campaign prototype, designed to demonstrate the connected simulation loop. It is not a finished commercial release. Dialogue is synthesized by the browser, with voice quality depending on the device. Report feedback uses authored patterns, not a language-model grader; valid paraphrases can be missed and some contradictions can escape detection. The art is a mixture of generated assets and original procedural environment rendering. See `docs/REVIEW.md` for validation and known limits.
+Version **0.3.0** is a small complete campaign prototype, designed to demonstrate the connected simulation loop. It is not a finished commercial release. Dialogue is synthesized by the browser, with voice quality depending on the device. Report feedback uses authored patterns, not a language-model grader; valid paraphrases can be missed and some contradictions can escape detection. Illustrated scene art is the default, with the original procedural environment available in Explore mode. Several supporting identities share character sprite variants. See `docs/REVIEW.md` for validation and known limits.
 
 ## Files
 
@@ -53,7 +57,7 @@ Version **0.2.0** is a small complete campaign prototype, designed to demonstrat
 | `dist/index.html`, `style.css`, `app.js` | Interface, accessibility controls, persistence, and speech |
 | `dist/core.js` | Simulation state and rules |
 | `dist/story.js` | Full five-day script, orders, events, facts, and report criteria |
-| `dist/world.js` | Navigable raycast environment and runtime props |
+| `dist/world.js`, `scene.js`, `scene-art.js`, `visual.css` | Walkable environment, illustrated stations, and visual redesign |
 | `dist/art.js`, `food-art.js`, `cover.png` | Included art; no external image URLs needed |
 | `docs/GAME-DESIGN.md` | Story, learning design, systems, and scope |
 | `docs/ART-PROMPTS.md` | Production asset list and reusable English prompts |
@@ -76,4 +80,4 @@ The tests use the JavaScript shell's `load`, `readFile`, and `print` functions. 
 
 ## Art budget
 
-This build used **two PixelLab trial generations**: a character sheet and a food sheet. It reuses the existing diner cover. No further art generation is needed to run the project, and gameplay makes no paid API calls.
+This project used **three PixelLab trial generations**: a character sheet, a food sheet, and the new room atlas. It reuses the existing diner cover. No further art generation is needed to run the project, and gameplay makes no paid API calls.
