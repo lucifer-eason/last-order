@@ -25,6 +25,12 @@ Controls: **W A S D** move, **left/right arrows** look, **E** interact, **N** no
 
 The notebook and reading dialogs pause time. Kitchen, counter, office, drinks, and stockroom panels stay live. Default shifts last six minutes; three- and ten-minute options are available each morning. You can close a shift early and accept the consequences.
 
+## Version 0.2 improvements
+
+Faster floor drawing, customer status cues, guarded workstation shortcuts, cooking alerts, asynchronously loaded English voices, broader report wording, and complete lost-property handling. Existing version-1 saves remain compatible. See `docs/CHANGES-0.2.md` for the accepted audit suggestions, adjustments, and test limits.
+
+Run `node tools/check.mjs` for all 54 automated checks.
+
 ## Included systems
 
 - Navigable software-rendered first-person pixel diner, with kitchen, dining room, office, and stockroom.
@@ -38,7 +44,7 @@ The notebook and reading dialogs pause time. Kitchen, counter, office, drinks, a
 
 ## What this version is
 
-Version **0.1.0** is a small complete campaign prototype, designed to demonstrate the connected simulation loop. It is not a finished commercial release. Dialogue is synthesized by the browser, with voice quality depending on the device. Report feedback uses authored patterns, not a language-model grader; valid paraphrases can be missed and some contradictions can escape detection. The art is a mixture of generated assets and original procedural environment rendering. See `docs/REVIEW.md` for validation and known limits.
+Version **0.2.0** is a small complete campaign prototype, designed to demonstrate the connected simulation loop. It is not a finished commercial release. Dialogue is synthesized by the browser, with voice quality depending on the device. Report feedback uses authored patterns, not a language-model grader; valid paraphrases can be missed and some contradictions can escape detection. The art is a mixture of generated assets and original procedural environment rendering. See `docs/REVIEW.md` for validation and known limits.
 
 ## Files
 

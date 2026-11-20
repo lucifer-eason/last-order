@@ -11,3 +11,5 @@
 /* Readable work surfaces; condensed metadata remains secondary. */
 .modal p{font-size:16px}.modal p.notice{font-size:13px!important}.objective p{font-size:14px}.customer-main b{font-size:14px}.modal button{font-size:14px}.modal .slot-title,.station-status{font-size:12px}.modal li{font-size:16px}.station-nav button{font-size:14px}.notebook-shortcut{font-size:13px}.title-actions button{font-size:16px}.modal select{appearance:none;padding-right:32px;background-image:linear-gradient(45deg,transparent 50%,#65574d 50%),linear-gradient(135deg,#65574d 50%,transparent 50%);background-position:calc(100% - 16px) 51%,calc(100% - 11px) 51%;background-size:5px 5px;background-repeat:no-repeat}
 @media(max-width:760px){.station-nav button{font-size:11px}.objective p{font-size:14px}.modal .grid-three{grid-template-columns:1fr}.modal button{font-size:14px}}
+
+.keyboard-hint{font:12px/1.8 var(--mono)!important;background:#251e2208;border-left:3px solid var(--red);padding:10px 13px;color:#66574c}#station-content:focus{outline:none}

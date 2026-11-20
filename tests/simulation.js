@@ -1,6 +1,6 @@
 /* Run with JavaScriptCore jsc or another JS shell with load(). */
 var window=globalThis;var localStorage={value:null,setItem:function(k,v){this.value=v;}};
-load('dist/story.js');load('dist/core.js');
+load('dist/story.js');load('dist/report.js');load('dist/core.js');
 var count=0;function test(name,fn){try{fn();count++;print('PASS '+name);}catch(e){print('FAIL '+name+': '+e.message);throw e;}}
 function assert(x,msg){if(!x)throw Error(msg||'Assertion failed');}
 function core(){let g=new LO.Core();g.begin();g.open();g.state.spawnAt=1e6;g.state.specialAt=1e6;g.state.eventAt=1e6;return g;}

@@ -1,4 +1,4 @@
-# Self-review — LAST ORDER 0.1.0
+# Self-review — LAST ORDER 0.2.0
 
 ## Delivery assessment
 
@@ -6,7 +6,7 @@ This is a playable campaign prototype with a continuous restaurant simulation. I
 
 ## Verified
 
-The automated checks pass **30 checks** in macOS JavaScriptCore: 27 simulation/script checks and three renderer smoke checks. Coverage includes all authored order variants; raw/ready/burnt cooking; incorrect components; payment integrity; contact verification and handoff prerequisites; expired pickup rejection; refrigeration and power failures; notice writing; every random-event resolution; expired events; stock and upgrades; inspection and cover reward integrity; all five authored report examples; simple negated time/place statements; duplicate-report prevention; day resets; partial evidence recovery; full traversal to each of four endings; free-service rollover; and save round-tripping. The browser scripts also parse successfully. Renderer checks draw every station in eight directions, render both atlas and procedural customers in lit/outage conditions, and verify that forward movement does not cross the service counter. These use a mock drawing context and do not evaluate actual browser pixels.
+The automated checks pass **54 checks** in Node: 27 existing simulation/script checks, six renderer smoke checks, and 21 targeted improvement checks. Coverage includes all authored order variants; raw/ready/burnt cooking; incorrect components; payment integrity; contact verification and handoff prerequisites; expired pickup rejection; refrigeration and power failures; notice writing; every random-event resolution; expired events; stock and upgrades; inspection and cover reward integrity; all five authored report examples; simple negated time/place statements; duplicate-report prevention; day resets; partial evidence recovery; full traversal to each of four endings; free-service rollover; and save round-tripping. The browser scripts also parse successfully. Renderer checks draw every station in eight directions, render both atlas and procedural customers in lit/outage conditions, and verify that forward movement does not cross the service counter. These use a mock drawing context and do not evaluate actual browser pixels.
 
 Static HTML checks verify unique IDs, every linked local script/style, included cover art, and no remote runtime assets in the page. Artwork was inspected before integration; the renderer and portrait coordinates were adjusted to the actual four-by-two character sheet.
 
@@ -42,3 +42,7 @@ Two PixelLab trial generations were used. Existing cover art was reused. The gam
 ## Publication status
 
 The dedicated private GitHub repository is `lucifer-eason/last-order`, with `main` as its production branch. Cloudflare Pages is linked to that repository with automatic production deployments enabled. The first production deployment succeeded at https://last-order-starline.pages.dev. All nine deployed files returned HTTP 200 and matched the local source by SHA-256. These checks verify delivery and file integrity; full interactive browser and visual playtesting remain unverified.
+
+## Version 0.2 review
+
+The supplied external audit was reviewed against the current source rather than applied as full-file replacements. `CHANGES-0.2.md` records what was adopted and why the proposed lossless palette conversion, fixed speedup estimate, and blanket negation-window fix were not accepted as stated. The current suite adds shared-negation and correction cases, time/depot vocabulary, actual pager records, debt-safe discard behavior, old-save migration, event-cycle and rollover recovery, audio transitions, input guards, asynchronous voice loading, and floor-buffer/color checks. Browser playtesting remains unverified.
